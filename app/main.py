@@ -21,20 +21,24 @@ app.include_router(vowels.router)
 
 @app.on_event('startup')
 async def startup():
-	await database.connect()
+    await database.connect()
 
 
 @app.on_event('shutdown')
 async def startup():
-	await database.disconnect()
+    await database.disconnect()
 
 
 @app.get("/")
 async def hello_world():
-	"""Shows env var VAR1"""
-	return ENV.get('VAR1')
+    """Shows env var VAR1"""
+    return ENV.get('VAR1')
 
 
 if __name__ == '__main__':
-	# add port to .env file (any port, 8000, for example)
-	uvicorn.run('app.main:app', host='0.0.0.0', port=int(ENV['PORT']), reload=True, log_level='info')
+    # add port to .env file (any port, 8000, for example)
+    uvicorn.run('app.main:app',
+                host='0.0.0.0',
+                port=int(ENV['PORT']),
+                reload=True,
+                log_level='info')
