@@ -16,7 +16,7 @@ load_dotenv(env_path)
 
 ENV = environ
 
-database = Database(ENV['DATABASE_URL'])
+database = Database(ENV.get('DATABASE_URL'))
 app = FastAPI()
 
 # router docs in https://fastapi.tiangolo.com/tutorial/bigger-applications/
