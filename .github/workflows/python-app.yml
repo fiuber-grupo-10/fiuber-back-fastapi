@@ -16,6 +16,7 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    environment: production
     env:
       DATABASE_URL: ${{ secrets.DATABASE_URL }}
       VAR1: 'HELLO WORLD'
