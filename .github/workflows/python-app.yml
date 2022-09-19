@@ -23,6 +23,11 @@ jobs:
       uses: actions/setup-python@v3
       with:
         python-version: "3.9"
+    - name: Set up env vars
+      run: |
+        touch .env
+        echo VAR1="Hello World" >> .env
+        echo DATABASE_URL=${{ secrets.DATABASE_URL }} >> .env
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
