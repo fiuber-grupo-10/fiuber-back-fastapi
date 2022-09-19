@@ -5,7 +5,7 @@ from fastapi import FastAPI
 from os import environ
 from dotenv import load_dotenv
 
-from routers import vowels
+from app.routers import vowels
 
 # loads env variables from .env file
 # don't commit .env file to git
