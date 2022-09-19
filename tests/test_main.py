@@ -12,6 +12,9 @@ def test_read_greeting():
     assert response.json() == "Hola Tomy! Te quiero mucho <3"
 
 
+""" Tests vowels endpoint """
+
+
 def test_read_no_vowels():
     response = client.get("/no_vowels/murcielago")
     assert response.status_code == 200

@@ -1,3 +1,4 @@
+import os
 from databases import Database
 import uvicorn
 from fastapi import FastAPI
@@ -8,7 +9,10 @@ from routers import vowels
 
 # loads env variables from .env file
 # don't commit .env file to git
-load_dotenv('../.env')
+curr_file_path = os.path.realpath(__file__)
+curr_directory = os.path.split(curr_file_path)[0]
+env_path = os.path.join(curr_directory, "../.env")
+load_dotenv(env_path)
 
 ENV = environ
 
