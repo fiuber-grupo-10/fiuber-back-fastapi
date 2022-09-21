@@ -1,0 +1,16 @@
+# Para desarrollo local
+services:
+  fiuber-back-fastapi:
+    build: .
+    env_file:
+      - ./.env # levantamos el .env para settear las variables de entorno dentro del container
+    working_dir: /fiuber-back-fastapi
+    ports:
+      - "8000:8000" # mappeo de puertos
+    volumes:
+      - ./app:/fiuber-back-fastapi/app # montamos el codigo para desarrollar sin tener q rebuildear todo
+    network_mode: 'host'
+    stdin_open: true
+    tty: true
+    command: uvicorn app.main:app --port 8000 --reload
+    container_name: fiuber-back-fastapi

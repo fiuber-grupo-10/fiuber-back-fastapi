@@ -12,7 +12,25 @@ heroku config:get <NOMBRE_DE_ENV_VAR> -s -a fiuber-back-fastapi-dev-g10 >> .env
 Asi podemos hacer con todas las variables de entorno que esten en el entorno
 de desarrollo para armar nuestro env file.
 
-## Cómo buildear y correr
+## Cómo buildear y correr (docker-compose)
+
+En la raiz del repo
+```
+docker-compose build
+```
+
+Luego:
+
+```
+docker-compose up
+```
+
+Como se monta el código como volumen al container, se puede desarrollar mientras corre la app.
+A medida que vayamos guardando el código, se rebuildeará (flag --reload en el comando de uvicorn) automaticamente. La idea es no rebuildear la imagen cada vez que hagamos un cambio y reducir el delay entre
+desarrollo y resultado.
+
+
+## Cómo buildear y correr (solo docker)
 
 Parados en la raiz del repo y con docker instalado, correr:
 
