@@ -1,7 +1,7 @@
 import uvicorn
 from fastapi import FastAPI
-from config import settings
-from database.db import create_session_from_url
+from app.config import settings
+from app.database.db import create_session_from_url
 
 app = FastAPI()
 

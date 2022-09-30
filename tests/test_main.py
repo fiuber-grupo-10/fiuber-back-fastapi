@@ -1,6 +1,6 @@
 from fastapi.testclient import TestClient
-from ..app.main import app, get_db
-from ..app.database.db import create_session_from_url
+from app.main import app, get_db
+from app.database.db import create_session_from_url
 
 """ Fake DB to test stuff (should add mock) """
 
